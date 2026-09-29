@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>T Daily Digest</title>
+<style>
+  @page { size: A4; margin: 0; }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: 0;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: #1c2430;
+    background: #ffffff;
+    font-size: 12.5px;
+    line-height: 1.5;
+  }
+  .sheet { width: 100%; padding: 0.55in 0.6in; }
+
+  /* ---------- Masthead ---------- */
+  .masthead {
+    display: flex; justify-content: space-between; align-items: flex-end;
+    border-bottom: 3px solid #1c2430; padding-bottom: 10px; margin-bottom: 4px;
+  }
+  .masthead-left { display: flex; align-items: center; gap: 12px; }
+  .logo-mark {
+    width: 40px; height: 40px; border-radius: 50%;
+    background: #1c2430; color: #c98a2c;
+    display: flex; align-items: center; justify-content: center;
+    font-family: Arial, sans-serif; font-weight: bold; font-size: 15px;
+    border: 2px solid #c98a2c; flex-shrink: 0;
+  }
+  .masthead h1 {
+    margin: 0; font-size: 27px; letter-spacing: 0.5px; font-weight: bold;
+  }
+  .masthead .subtitle {
+    margin: 2px 0 0 0; font-size: 9.5px; letter-spacing: 1px; color: #555;
+    font-family: Arial, sans-serif; font-weight: bold; text-transform: uppercase;
+  }
+  .masthead-right {
+    text-align: right; font-family: Arial, sans-serif; font-size: 10.5px; color: #333; line-height: 1.5;
+  }
+  .masthead-right .issued { font-weight: bold; color: #1c2430; }
+  .toc-strip {
+    font-family: Arial, sans-serif; font-size: 9px; letter-spacing: 1.5px; text-transform: uppercase;
+    color: #7a6a4a; font-weight: bold; padding: 6px 0 14px 0; border-bottom: 1px solid #ddd; margin-bottom: 16px;
+  }
+
+  /* ---------- Section dividers (India / Pakistan / Global) ---------- */
+  .section-divider {
+    background: #1c2430; color: #fff; padding: 9px 14px; margin: 0 0 12px 0;
+    display: flex; justify-content: space-between; align-items: center;
+    border-radius: 2px;
+  }
+  .section-divider.break { break-before: page; page-break-before: always; padding-top: 9px; }
+  .section-divider h2 {
+    margin: 0; font-size: 17px; letter-spacing: 1.5px; text-transform: uppercase;
+  }
+  .section-divider .section-tag {
+    font-family: Arial, sans-serif; font-size: 9px; letter-spacing: 1px; color: #c98a2c;
+    text-transform: uppercase; font-weight: bold;
+  }
+
+  /* ---------- Country header ---------- */
+  .country-header {
+    display: flex; justify-content: space-between; align-items: baseline;
+    border-bottom: 2px solid #c98a2c; padding-bottom: 5px; margin: 0 0 12px 0;
+  }
+  .country-header h3 { margin: 0; font-size: 15px; color: #1c2430; }
+  .country-header .stat {
+    font-family: Arial, sans-serif; font-size: 10px; color: #7a6a4a; font-weight: bold;
+  }
+
+  /* ---------- Topic blocks ---------- */
+  .topic-block { margin-bottom: 14px; break-inside: avoid; page-break-inside: avoid; }
+  .topic-label {
+    font-family: Arial, sans-serif; font-size: 10px; font-weight: bold; letter-spacing: 1.5px;
+    text-transform: uppercase; color: #fff; background: #4a5568;
+    display: inline-block; padding: 3px 9px; margin-bottom: 7px; border-radius: 2px;
+  }
+  .topic-block.pol .topic-label { background: #2c5a86; }
+  .topic-block.eco .topic-label { background: #3a7d5c; }
+  .topic-block.mil .topic-label { background: #7a2e2e; }
+  .topic-block.tech .topic-label { background: #6a4a9a; }
+
+  .item-card {
+    border-left: 3px solid #ddd; padding: 2px 0 2px 12px; margin-bottom: 10px;
+  }
+  .item-headline { font-size: 13px; font-weight: bold; margin: 0 0 5px 0; color: #1c2430; }
+  .item-field { font-family: Arial, sans-serif; font-size: 11px; margin: 0 0 4px 0; line-height: 1.45; }
+  .item-field .flabel {
+    font-weight: bold; letter-spacing: 0.5px; color: #7a6a4a; text-transform: uppercase; font-size: 9px;
+    margin-right: 4px;
+  }
+  .item-field.impact .flabel { color: #7a2e2e; }
+
+  /* ---------- Footer ---------- */
+  .footer {
+    margin-top: 16px; padding-top: 8px; border-top: 1px solid #ccc;
+    font-family: Arial, sans-serif; font-size: 8.5px; color: #666; line-height: 1.5;
+  }
+  .footer .disclaimer { color: #a03030; font-weight: bold; }
+</style>
+</head>
+<body>
+<div class="sheet">
+
+  <!-- ==== MASTHEAD ==== -->
+  <div class="masthead">
+    <div class="masthead-left">
+      <div class="logo-mark">TD</div>
+      <div>
+        <h1>T Daily Digest</h1>
+        <p class="subtitle">India &middot; Pakistan &middot; Global &mdash; Daily News Digest</p>
+      </div>
+    </div>
+    <div class="masthead-right">
+      <div class="issued">Tuesday, 18 August 2026 &middot; 0900H</div>
+      <div>Vol. 2026 &middot; No. 010</div>
+    </div>
+  </div>
+  <div class="toc-strip">India: Political &middot; Economic &middot; Military &middot; Technology &nbsp;|&nbsp; Pakistan: Political &middot; Economic &middot; Military &middot; Technology &nbsp;|&nbsp; Global: AI &middot; Military &middot; Tech Advancements</div>
+
+  <!-- ==== INDIA ==== -->
+  <div class="section-divider">
+    <h2>India</h2>
+    <span class="section-tag">Political &middot; Economic &middot; Military &middot; Technology</span>
+  </div>
+  <div class="country-header">
+    <h3>New Delhi</h3>
+    <span class="stat">Sensex (Aug 18 close): 77,235.46, -0.63%</span>
+  </div>
+
+  <div class="topic-block pol">
+    <div class="topic-label">Political</div>
+    <div class="item-card">
+      <p class="item-headline">India hosts 12th BRICS Environment Ministers' Meeting in New Delhi, chaired by Bhupender Yadav under its 2026 BRICS chairship</p>
+      <p class="item-field"><span class="flabel">Facts</span>Union Minister for Environment, Forest and Climate Change Bhupender Yadav chaired the 12th BRICS Environment Ministers' Meeting in New Delhi on August 18, bringing together senior officials from Brazil, China, Egypt, Ethiopia, Indonesia, Iran, Russia, South Africa and the UAE. The meeting, held under India's 2026 BRICS chairship theme "Building for Resilience, Innovation, Cooperation and Sustainability," focused on sustainable lifestyles, afforestation and forest-fire management, circular economy and climate adaptation.</p>
+      <p class="item-field"><span class="flabel">Ideal Case</span>BRICS members translate the meeting's environmental-cooperation priorities into concrete joint commitments rather than a non-binding communique.</p>
+      <p class="item-field impact"><span class="flabel">Impact</span>Global &mdash; positions India as a convener of South-South environmental cooperation among BRICS' expanded nine-member bloc.</p>
+    </div>
+  </div>
+
+  <div class="topic-block eco">
+    <div class="topic-label">Economic</div>
+    <div class="item-card">
+      <p class="item-headline">Sensex slides 493 points to 77,235.46 as a lapsed US-Iran ceasefire drives crude oil higher</p>
+      <p class="item-field"><span class="flabel">Facts</span>The BSE Sensex fell 493 points (0.63%) to close at 77,235.46 on August 18, while the Nifty 50 dropped 132.75 points (0.55%) to 24,154.90, pressured by renewed geopolitical tension after a US-Iran ceasefire lapsed and crude prices rose; the Sensex had opened down 309.19 points. Bank deposits offered a bright spot, growing 15.4% year-on-year as of July 31 &mdash; the fastest pace since December 2016 &mdash; while the BSE Smallcap Select Index bucked the trend, adding 24.22 points to 9,146.19.</p>
+      <p class="item-field"><span class="flabel">Ideal Case</span>Crude prices stabilize quickly enough that deposit-growth strength in banking offsets the geopolitical drag on large-cap equities.</p>
+      <p class="item-field impact"><span class="flabel">Impact</span>Global &mdash; ties India's equity slide directly to the wider US-Iran conflict's effect on oil markets.</p>
+    </div>
+  </div>
+
+  <div class="topic-block mil">
+    <div class="topic-label">Military</div>
+    <div class="item-card">
+      <p class="item-headline">India signs &#8377;1,943-crore, 30-month lease for two more MQ-9B Sea Guardian drones to expand Navy's maritime surveillance</p>
+      <p class="item-field"><span class="flabel">Facts</span>The Ministry of Defence signed a &#8377;1,943 crore (~$203M) contract with General Atomics Aeronautical Systems on August 17 to lease two additional MQ-9B Sea Guardian High-Altitude Long-Endurance RPAS for the Indian Navy for 30 months, signed at Kartavya Bhawan-2, New Delhi in the presence of Additional Secretary &amp; DG (Acquisition) A. Anbarasu. The Navy currently operates two leased MQ-9Bs under a contractor-owned, contractor-operated model that has seen multiple extensions.</p>
+      <p class="item-field"><span class="flabel">Ideal Case</span>The leased platforms deliver persistent Indian Ocean maritime-domain awareness without further extension-driven delays to a permanent acquisition.</p>
+      <p class="item-field impact"><span class="flabel">Impact</span>Global &mdash; deepens US-India defense-industrial ties through General Atomics while expanding India's unmanned maritime ISR footprint in the Indian Ocean Region.</p>
+    </div>
+  </div>
+
+  <div class="topic-block tech">
+    <div class="topic-label">Technology Advancements</div>
+    <div class="item-card">
+      <p class="item-headline">Samsung's ennovateX 2026 wraps in Bengaluru, spotlighting agentic and physical AI before 300+ industry and academic leaders</p>
+      <p class="item-field"><span class="flabel">Facts</span>Samsung R&amp;D Institute India-Bangalore concluded the second edition of ennovateX 2026 on August 14 under the theme "AI for Living," drawing more than 300 technology and business leaders, researchers and innovators for keynotes, panels, an AX Start-up Pitch and an AX Hackathon. Speakers included Harsh Dhand (Director, AI Partnerships, Google Asia Pacific), Dr. Kumar Sivarajan (CTO, Tejas Networks) and Prof. Navkanta Bhat (Dean, IISc Bengaluru), with sessions covering proactive and multimodal AI, physical AI and AI-enabled 6G infrastructure.</p>
+      <p class="item-field"><span class="flabel">Ideal Case</span>The startup pitches and hackathon translate into funded, deployable products rather than one-off conference demonstrations.</p>
+      <p class="item-field impact"><span class="flabel">Impact</span>Global &mdash; reinforces Bengaluru's role as a hub for Samsung's AI R&amp;D and India's broader startup-to-enterprise AI pipeline.</p>
+    </div>
+  </div>
+
+  <!-- ==== PAKISTAN ==== -->
+  <div class="section-divider break">
+    <h2>Pakistan</h2>
+    <span class="section-tag">Political &middot; Economic &middot; Military &middot; Technology</span>
+  </div>
+  <div class="country-header">
+    <h3>Islamabad</h3>
+    <span class="stat">Petrol price (Aug 18): Rs331.20/litre, +Rs5.77</span>
+  </div>
+
+  <div class="topic-block pol">
+    <div class="topic-label">Political</div>
+    <div class="item-card">
+      <p class="item-headline">ISPR warns any future Indian "military misadventure" will draw a "disproportionate response" after Discovery docuseries on Operation Sindoor</p>
+      <p class="item-field"><span class="flabel">Facts</span>Pakistan's Inter-Services Public Relations (ISPR) said on August 18 that "any future military misadventure will be met with a firm, decisive and disproportionate response," reacting to the Discovery docuseries "Declassified: Operation Sindoor," in which senior Indian political and military leaders describe last year's 88-hour conflict as a "100 percent mission success." ISPR called the series a dramatized, propagandistic account and said Pakistan's armed forces remain fully prepared to defend the country's sovereignty and territorial integrity.</p>
+      <p class="item-field"><span class="flabel">Ideal Case</span>Both sides confine the dispute to statements and media rebuttals rather than allowing documentary-driven rhetoric to escalate operationally.</p>
+      <p class="item-field impact"><span class="flabel">Impact</span>Pakistan specifically &mdash; reflects Islamabad's continued sensitivity to Indian public narratives around last year's conflict shaping the current bilateral tone.</p>
+    </div>
+  </div>
+
+  <div class="topic-block eco">
+    <div class="topic-label">Economic</div>
+    <div class="item-card">
+      <p class="item-headline">OGRA raises petrol Rs5.77 to Rs331.20/litre and diesel Rs6.47 to Rs390.42, a second straight increase</p>
+      <p class="item-field"><span class="flabel">Facts</span>Effective August 18, Pakistan's Oil and Gas Regulatory Authority raised petrol by Rs5.77/litre to Rs331.20 and high-speed diesel by Rs6.47/litre to Rs390.42, following talks between the Pakistan Petroleum Dealers Association and the Ministry of Petroleum on August 12 that ended without a broader pricing-system agreement, though the government agreed to consider a Rs1.34 increase in dealers' margins.</p>
+      <p class="item-field"><span class="flabel">Ideal Case</span>The government and dealers reach a durable pricing-mechanism agreement that limits the frequency of consumer-facing hikes.</p>
+      <p class="item-field impact"><span class="flabel">Impact</span>Pakistan specifically &mdash; raises transport and consumer costs directly for Pakistani households and businesses.</p>
+    </div>
+  </div>
+
+  <div class="topic-block mil">
+    <div class="topic-label">Military</div>
+    <div class="item-card">
+      <p class="item-headline">Security forces kill nine militants in twin Balochistan operations under the Radd-ul-Fitna 3 campaign</p>
+      <p class="item-field"><span class="flabel">Facts</span>Pakistani security forces killed nine militants on August 18 in separate intelligence-based operations in Balochistan &mdash; eight in a mountainous area between Ziarat and Harnai districts and one in Surab district &mdash; as part of the ongoing Radd-ul-Fitna 3 counter-terrorism campaign. Forces destroyed the militant hideout and recovered ammunition, magazines, hand grenades, a walkie-talkie and a motorcycle; the operations follow a similar raid on August 16 in Kharan district that killed seven Fitna al-Khawarij (TTP) militants.</p>
+      <p class="item-field"><span class="flabel">Ideal Case</span>Intelligence-based operations degrade militant networks in Balochistan without harming civilians or displacing local communities.</p>
+      <p class="item-field impact"><span class="flabel">Impact</span>Pakistan specifically &mdash; underscores a sustained counter-terrorism campaign against militant hideouts across Balochistan's mountainous districts.</p>
+    </div>
+  </div>
+
+  <div class="topic-block tech">
+    <div class="topic-label">Technology Advancements</div>
+    <div class="item-card">
+      <p class="item-headline">Zong and Zindigi launch Z-Wallet, embedding digital banking in the My Zong app for over 22 million users</p>
+      <p class="item-field"><span class="flabel">Facts</span>Zong (CMPak) and JS Bank's Zindigi launched Z-Wallet on August 17, embedding regulated digital financial services directly into the My Zong app, which has more than 22 million monthly active users; the service offers interbank transfers via RAAST, utility and internet bill payments and mobile top-ups through a single login and PIN. Following a soft launch, Z-Wallet had onboarded roughly 22,000 verified wallets and processed more than 12,000 transactions within a few weeks.</p>
+      <p class="item-field"><span class="flabel">Ideal Case</span>Z-Wallet's embedded-banking model extends formal financial access to previously unbanked mobile subscribers without early fraud or reliability issues.</p>
+      <p class="item-field impact"><span class="flabel">Impact</span>Pakistan specifically &mdash; expands digital and financial inclusion for one of Pakistan's largest mobile subscriber bases.</p>
+    </div>
+  </div>
+
+  <!-- ==== GLOBAL ==== -->
+  <div class="section-divider break">
+    <h2>Global</h2>
+    <span class="section-tag">AI &middot; Military Development &middot; Technology Advancements</span>
+  </div>
+
+  <div class="topic-block tech">
+    <div class="topic-label">Global AI</div>
+    <div class="item-card">
+      <p class="item-headline">Google, UK aviation bodies and universities launch Operation Blue Skies, a &pound;5M state-backed trial to cut contrail warming over the North Atlantic</p>
+      <p class="item-field"><span class="flabel">Facts</span>Google, the UK Department for Transport, the Met Office, NATS, Contrails.org, Imperial College London and Cambridge University launched Operation Blue Skies on August 18, a &pound;5 million (partly &pound;2.65M DfT-funded), 30-month trial described as the world's first oceanic-airspace-scale contrail-avoidance program. Starting this winter, air traffic controllers will use Google's AI contrail forecasting to reroute a small share of the roughly 10,000 flights/year through NATS-controlled Shanwick oceanic airspace &mdash; responsible for about 5% of global contrail warming &mdash; by up to 2,000 feet, across trial windows in winter 2026-27 and 2027-28.</p>
+      <p class="item-field"><span class="flabel">Ideal Case</span>The trial demonstrates that AI-guided altitude changes meaningfully cut contrail-driven warming at a cost airlines and regulators can scale globally.</p>
+      <p class="item-field impact"><span class="flabel">Impact</span>Global &mdash; the first government-backed test of AI-directed flight-path changes at the scale of an entire oceanic airspace region.</p>
+    </div>
+  </div>
+
+  <div class="topic-block mil">
+    <div class="topic-label">Global Military Development</div>
+    <div class="item-card">
+      <p class="item-headline">US has lost roughly 45 MQ-9 Reaper drones &mdash; about a quarter of its fleet &mdash; in the Iran war, officials say</p>
+      <p class="item-field"><span class="flabel">Facts</span>The US military has lost at least 45 MQ-9 Reaper drones, or about 25% of its pre-war fleet, during operations against Iran under what US forces have termed "Operation Epic Fury," according to three US officials cited by the Washington Post on August 13 and corroborated by subsequent reporting through August 18. The Reapers, costing $30-50 million each depending on sensors and weapons, were used heavily for surveillance and strikes around the Strait of Hormuz, with the losses representing a potential taxpayer cost exceeding $1.3 billion.</p>
+      <p class="item-field"><span class="flabel">Ideal Case</span>The Pentagon absorbs the attrition through accelerated replacement production without degrading ongoing ISR coverage of the Strait of Hormuz.</p>
+      <p class="item-field impact"><span class="flabel">Impact</span>Global &mdash; a historic rate of drone attrition that will shape US Air Force procurement and unmanned-systems doctrine going forward.</p>
+    </div>
+  </div>
+
+  <div class="topic-block pol">
+    <div class="topic-label">Global Tech Advancements</div>
+    <div class="item-card">
+      <p class="item-headline">Synopsys unveils fully autonomous agentic AI chip-design workflows with Nvidia, AMD and Microsoft at DAC 2026</p>
+      <p class="item-field"><span class="flabel">Facts</span>At the 2026 DAC Chips to Systems Conference, Synopsys showcased fully autonomous, long-running agentic AI workflows for chip design and verification built with Nvidia technology, achieving up to 50x faster time-to-validated RTL with a 20% coverage improvement, and separately introduced the first autonomous EDA workflows on Microsoft platforms developed with AMD and Microsoft. Startup ChipAgents separately raised $60 million to build autonomous chip-design agents, reflecting broader investment momentum in AI-driven electronic design automation.</p>
+      <p class="item-field"><span class="flabel">Ideal Case</span>Agentic AI design tools shorten chip-development cycles industry-wide without introducing unverified errors into production silicon.</p>
+      <p class="item-field impact"><span class="flabel">Impact</span>Global &mdash; accelerating automation of chip design and verification could materially speed the semiconductor cycles underlying the broader AI buildout.</p>
+    </div>
+  </div>
+
+  <!-- ==== FOOTER ==== -->
+  <div class="footer">
+    <span>Sources: IANS &middot; ANI &middot; The Tribune (India) &middot; India TV News &middot; BusinessToday &middot; Naval News &middot; Samsung Newsroom India &middot; Radio Pakistan (ISPR) &middot; Arab News &middot; ProPakistani &middot; The Express Tribune &middot; Xinhua &middot; Google Blog &middot; The Washington Post &middot; The Defense Post &middot; SemiEngineering</span>
+    <span class="disclaimer">Compiled from open-source and X/Twitter reporting for briefing purposes only &mdash; not independently verified intelligence. "Ideal Case" reflects an analytical best-case framing, not a prediction. Next edition: tomorrow 0900 local.</span>
+  </div>
+
+</div>
+</body>
+</html>

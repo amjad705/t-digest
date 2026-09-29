@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>T Digest — Briefing — Tuesday, 29 September 2026</title>
+<style>
+  :root {
+    --bg: #eae7de;
+    --desk: #d9d5c8;
+    --ink: #1c1a17;
+    --ink-soft: #3a362f;
+    --muted: #6b6558;
+    --muted-2: #8a8471;
+    --rule: #1a1a1a;
+    --rule-light: #c9c3b6;
+    --india: #b5732a;
+    --india-tint: #f7e2c6;
+    --pakistan: #2f7a4f;
+    --pakistan-tint: #d9f0e1;
+    --global: #3a5a78;
+    --accent-section: #1f4a7a;
+    --accent-section-tint: #d6e4f5;
+    --masthead-accent: #7a3226;
+    --callout-bg: #dedacd;
+    --callout-border: #c9c3b6;
+    --serif: Georgia, 'Times New Roman', serif;
+    --sans: system-ui, -apple-system, 'Segoe UI', Arial, sans-serif;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body { margin: 0; background: var(--desk); }
+
+  body {
+    padding: 32px 16px 64px;
+    font-family: var(--sans);
+    color: var(--ink);
+  }
+
+  .page {
+    max-width: 8.27in;
+    margin: 0 auto 24px;
+    background: var(--bg);
+    padding: 0.55in;
+  }
+
+  .page + .page {
+    break-before: page;
+  }
+
+  /* Masthead */
+  .masthead-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 10px;
+  }
+
+  .wordmark-group {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+  }
+
+  .wordmark {
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: 40px;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+  }
+
+  .vol-info {
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .masthead-right {
+    text-align: right;
+  }
+
+  .daily-tag {
+    font-size: 12.5px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--masthead-accent);
+  }
+
+  .dateline {
+    font-size: 13px;
+    color: var(--muted);
+    margin-top: 2px;
+  }
+
+  .subtitle {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 14px;
+    color: var(--ink-soft);
+    margin: 4px 0 6px;
+  }
+
+  .meta-row {
+    display: flex;
+    gap: 28px;
+    font-size: 11.5px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 2px;
+    flex-wrap: wrap;
+  }
+
+  .meta-row b {
+    color: var(--ink-soft);
+    font-weight: 700;
+  }
+
+  .masthead-rule {
+    border-bottom: 4px double var(--rule);
+    margin: 8px 0 12px;
+  }
+
+  /* Section label */
+  .section-label-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 10px;
+  }
+
+  .section-label {
+    font-family: var(--sans);
+    font-size: 14.5px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink);
+    white-space: nowrap;
+  }
+
+  .section-label-rule {
+    flex: 1;
+    border-bottom: 1.5px solid var(--rule);
+  }
+
+  /* Country grid */
+  .country-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 30px;
+  }
+
+  .country-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    border-bottom: 2px solid var(--rule);
+    padding-bottom: 4px;
+    margin-bottom: 8px;
+  }
+
+  .country-name {
+    display: inline-block;
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: 30px;
+    color: var(--accent-section);
+    background: var(--accent-section-tint);
+    padding: 1px 10px 2px;
+    border-radius: 2px;
+  }
+
+  .country-city {
+    font-size: 11.5px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted-2);
+    margin-top: 2px;
+  }
+
+  .country-stat {
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: 22px;
+  }
+
+  .country-stat.india { color: var(--india); }
+  .country-stat.pakistan { color: var(--pakistan); }
+
+  .topic {
+    break-inside: avoid;
+    margin-bottom: 5px;
+  }
+
+  .topic-head {
+    margin: 0 0 2px;
+  }
+
+  .topic-label {
+    font-size: 11.5px;
+    font-weight: 700;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+  }
+
+  .topic-label.india { color: var(--india); }
+  .topic-label.pakistan { color: var(--pakistan); }
+
+  .topic-title {
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: 15.5px;
+    color: var(--ink);
+  }
+
+  .topic ul {
+    margin: 0;
+    padding-left: 13px;
+  }
+
+  .topic li {
+    font-size: 12.5px;
+    line-height: 1.35;
+    margin-bottom: 1px;
+    color: var(--ink-soft);
+  }
+
+  .topic li::marker {
+    color: var(--muted-2);
+  }
+
+  .impact {
+    font-style: italic;
+    color: var(--muted);
+  }
+
+  /* Callout */
+  .callout {
+    background: var(--callout-bg);
+    border: 1px solid var(--callout-border);
+    border-radius: 3px;
+    padding: 6px 14px 4px;
+    margin-top: 2px;
+  }
+
+  .callout-head {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--masthead-accent);
+    margin-bottom: 5px;
+  }
+
+  .callout ul {
+    margin: 0;
+    padding-left: 13px;
+  }
+
+  .callout li {
+    font-size: 12.5px;
+    line-height: 1.35;
+    margin-bottom: 2px;
+    color: var(--ink-soft);
+  }
+
+  /* Global sections */
+  .global-block {
+    display: grid;
+    grid-template-columns: 1fr 130px;
+    gap: 0 20px;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--rule-light);
+    break-inside: avoid;
+  }
+
+  .global-block:first-of-type {
+    padding-top: 4px;
+  }
+
+  .global-block:last-of-type {
+    border-bottom: none;
+  }
+
+  .global-eyebrow {
+    font-size: 11.5px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--global);
+    margin-bottom: 4px;
+  }
+
+  .global-title {
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: 22.5px;
+    color: var(--ink);
+    margin: 0 0 5px;
+  }
+
+  .global-deck {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 14px;
+    color: var(--ink-soft);
+    line-height: 1.4;
+    margin: 0 0 10px;
+  }
+
+  .global-block ul {
+    margin: 0;
+    padding-left: 14px;
+  }
+
+  .global-block li {
+    font-size: 13.5px;
+    line-height: 1.48;
+    margin-bottom: 6px;
+    color: var(--ink-soft);
+  }
+
+  .stat-panel {
+    border-left: 2px solid var(--global);
+    padding-left: 14px;
+  }
+
+  .stat-number {
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: 32px;
+    color: var(--global);
+    line-height: 1.1;
+  }
+
+  .stat-caption {
+    font-size: 11.5px;
+    line-height: 1.35;
+    color: var(--muted);
+    margin-top: 4px;
+  }
+
+  /* Footer */
+  .page-footer {
+    margin-top: 20px;
+    padding-top: 12px;
+    border-top: 1px solid var(--rule-light);
+  }
+
+  .sources-list {
+    font-size: 9.5px;
+    color: var(--muted);
+    line-height: 1.6;
+    column-count: 3;
+    column-gap: 20px;
+    margin-bottom: 8px;
+  }
+
+  .footer-note {
+    font-size: 11.5px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--muted-2);
+  }
+
+  @media print {
+    html, body { background: var(--bg); padding: 0; }
+    .page { max-width: none; padding: 0; margin: 0; }
+  }
+
+  @media (max-width: 640px) {
+    .country-grid { grid-template-columns: 1fr; }
+    .global-block { grid-template-columns: 1fr; }
+    .stat-panel { border-left: none; border-top: 2px solid var(--global); padding-left: 0; padding-top: 8px; margin-top: 8px; }
+    .sources-list { column-count: 1; }
+    .page { padding: 0.4in 20px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+  <div class="masthead-row">
+    <div class="wordmark-group">
+      <span class="wordmark">T Digest</span>
+      <span class="vol-info">Vol. 1 &middot; No. 272</span>
+    </div>
+    <div class="masthead-right">
+      <div class="daily-tag">Daily &middot; 0800 IST</div>
+      <div class="dateline">Tuesday, 29 September 2026</div>
+    </div>
+  </div>
+
+  <div class="subtitle">South Asia &amp; global security-technology digest &mdash; India &middot; Pakistan &middot; Global</div>
+
+  <div class="meta-row">
+    <span><b>Scope</b> &mdash; Military &middot; Political &middot; Economy &middot; Technology</span>
+    <span><b>Coverage</b> &mdash; India, Pakistan, Global</span>
+  </div>
+  <div class="meta-row">
+    <span><b>Sourcing</b> &mdash; Open Press, Wire Services, X/OSINT</span>
+  </div>
+
+  <div class="masthead-rule"></div>
+
+  <div class="section-label-row">
+    <span class="section-label">South Asia</span>
+    <span class="section-label-rule"></span>
+  </div>
+
+  <div class="autofit" id="af-p1">
+  <div class="country-grid">
+    <div>
+      <div class="country-header">
+        <div>
+          <div class="country-name">India</div>
+          <div class="country-city">New Delhi</div>
+        </div>
+        <div class="country-stat india">72,772</div>
+      </div>
+
+      <div class="topic">
+        <div class="topic-head"><span class="topic-label india">Military</span> &mdash; <span class="topic-title">Navy Commanders&rsquo; Conference Opens Today With West Asia Energy Security On The Agenda</span></div>
+        <ul>
+          <li>The second Commanders&rsquo; Conference of 2026 runs Sept 29&ndash;Oct 1 at Nausena Bhawan; Rajnath Singh sets out his maritime guidance on day one, with CDS Gen Subramani and Adm Swaminathan attending. <span class="impact">&mdash; Impact: protecting energy shipping from the Gulf becomes a core naval task.</span></li>
+          <li>Commanders will review operations, logistics and training, plus AI, big-data analysis, uncrewed systems and cyber operations; Army Chief Gen Dhiraj Seth is also due to address them. <span class="impact">&mdash; Impact: uncrewed and AI tools move to the centre of fleet planning.</span></li>
+        </ul>
+      </div>
+
+      <div class="topic">
+        <div class="topic-head"><span class="topic-label india">Political</span> &mdash; <span class="topic-title">Opposition Steps Up Its Campaign To Remove CEC Gyanesh Kumar</span></div>
+        <ul>
+          <li>Left parties are holding a week of protests from Sept 26 to Oct 2 against the voter-roll SIR, which has struck more than 130 million names off the rolls. <span class="impact">&mdash; Impact: the EC dispute becomes a nationwide street issue.</span></li>
+          <li>The youth-led Cockroach Janta Party says it will take to the streets from Oct 2 after its Sept 26 deadline for Kumar to resign passed. <span class="impact">&mdash; Impact: Gandhi Jayanti becomes a flashpoint for protests.</span></li>
+        </ul>
+      </div>
+
+      <div class="topic">
+        <div class="topic-head"><span class="topic-label india">Economy</span> &mdash; <span class="topic-title">Sensex Drops 1,124 Points To A Six-Month Low As Brent Tops $106</span></div>
+        <ul>
+          <li>The Sensex fell 1.52% to 72,772, its lowest close since March 30, and the Nifty 1.56% to 22,780, after US-Iran diplomacy stalled and crude jumped. <span class="impact">&mdash; Impact: extends the longest losing run since COVID.</span></li>
+          <li>The rupee traded near 95.98 per dollar as foreign investors kept selling, even though GDP grew 7.8% in April&ndash;June, above the RBI&rsquo;s 7% forecast. <span class="impact">&mdash; Impact: strong growth is not shielding markets from the oil shock.</span></li>
+        </ul>
+      </div>
+
+      <div class="topic">
+        <div class="topic-head"><span class="topic-label india">Technology</span> &mdash; <span class="topic-title">MagTapp Rebuilds Its Browser Around AI And Expands To iOS</span></div>
+        <ul>
+          <li>The Indian browser, with more than six million downloads, now runs 169Pi&rsquo;s Alpie models to answer questions, summarise documents and translate pages in place. <span class="impact">&mdash; Impact: homegrown models reach mass-market consumer apps.</span></li>
+          <li>Other Sept 28 deals included a &#8377;100 crore Series B for agritech firm Balwaan Krishi and $1m for Alive App from Flipkart Ventures and others. <span class="impact">&mdash; Impact: early-stage funding keeps flowing despite the market slide.</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div>
+      <div class="country-header">
+        <div>
+          <div class="country-name">Pakistan</div>
+          <div class="country-city">Islamabad</div>
+        </div>
+        <div class="country-stat pakistan">$1.2bn</div>
+      </div>
+
+      <div class="topic">
+        <div class="topic-head"><span class="topic-label pakistan">Military</span> &mdash; <span class="topic-title">Field Marshal Munir Meets The US Afghanistan War Commission</span></div>
+        <ul>
+          <li>A delegation led by co-chairs Shamila Chaudhary and Colin Jackson met Munir in Rawalpindi; ISPR says it acknowledged Pakistan&rsquo;s &ldquo;longstanding role and sacrifices&rdquo; in the war. <span class="impact">&mdash; Impact: Rawalpindi gains a hearing in Washington&rsquo;s official record.</span></li>
+          <li>Munir described the costs Pakistan bore and urged the commission to include regional and Pakistani views in its review of 2001&ndash;2021. <span class="impact">&mdash; Impact: signals continued warming of army-to-Washington ties.</span></li>
+        </ul>
+      </div>
+
+      <div class="topic">
+        <div class="topic-head"><span class="topic-label pakistan">Political</span> &mdash; <span class="topic-title">PTI Long March Set To Leave Peshawar On Oct 4</span></div>
+        <ul>
+          <li>KP CM Sohail Afridi says the march will depart Peshawar on Oct 4 and workers will mark Imran Khan&rsquo;s Oct 5 birthday in Islamabad as &ldquo;Victory Day&rdquo;. <span class="impact">&mdash; Impact: the confrontation shifts to the weekend.</span></li>
+          <li>PTI is demanding justice for Khan&rsquo;s sisters, who remain in detention, while heavy rain hit Islamabad and Punjab. <span class="impact">&mdash; Impact: the detentions give PTI a new rallying cry.</span></li>
+        </ul>
+      </div>
+
+      <div class="topic">
+        <div class="topic-head"><span class="topic-label pakistan">Economy</span> &mdash; <span class="topic-title">Pakistan And The IMF Begin Formal Talks With $1.2bn At Stake</span></div>
+        <ul>
+          <li>Iva Petrova&rsquo;s mission moved from technical talks in Karachi to policy talks in Islamabad on the fourth $7bn EFF review and third RSF review; it stays until early October. <span class="impact">&mdash; Impact: tax and energy targets face close scrutiny.</span></li>
+          <li>Success would release about $1bn under the EFF and $200m under the RSF by late November or early December; the KSE-100 last closed at 170,765. <span class="impact">&mdash; Impact: the review is the main trigger for stocks.</span></li>
+        </ul>
+      </div>
+
+      <div class="topic">
+        <div class="topic-head"><span class="topic-label pakistan">Technology</span> &mdash; <span class="topic-title">Shaza Fatima: Pakistan Committed To A $25bn IT Export Target</span></div>
+        <ul>
+          <li>The IT minister says tech exports are growing more than 20% a year, with over half going to the US; ICT exports hit a record $4.6bn last fiscal year. <span class="impact">&mdash; Impact: the target needs growth to roughly double.</span></li>
+          <li>August IT exports rose 17% to $394.6m, but a national test found only 0.4% of final-year CS students scored above 80%. <span class="impact">&mdash; Impact: skills, not demand, are the main bottleneck.</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <div class="callout-head">Open-Source &amp; X Signal &mdash; South Asia</div>
+    <ul>
+      <li>Indian security reports describe a rise in Pakistani drone sightings along the LoC over recent weeks, used to track Indian troop moves and help infiltration; Pakistan has rejected earlier such claims as baseless. <span class="impact">&mdash; Impact: expect more counter-drone deployments along the LoC.</span></li>
+      <li>OSINT accounts are watching the Indian Navy&rsquo;s focus on uncrewed systems at this week&rsquo;s Commanders&rsquo; Conference, alongside Pakistan&rsquo;s six Earth-observation satellites launched since January 2025. <span class="impact">&mdash; Impact: surveillance and drone competition now spans land and sea.</span></li>
+    </ul>
+  </div>
+  </div>
+</div>
+
+<div class="page">
+  <div class="section-label-row">
+    <span class="section-label">Global</span>
+    <span class="section-label-rule"></span>
+  </div>
+
+  <div class="autofit" id="af-p2">
+  <div class="global-block">
+    <div>
+      <div class="global-eyebrow">AI &amp; Technology</div>
+      <div class="global-title">Nvidia Launches An Open Agent Safety Platform To Rein In Rogue AI Agents</div>
+      <p class="global-deck">Agent security moves from software into the silicon.</p>
+      <ul>
+        <li>The platform pairs OpenShell, open-source software that fences an agent in, with Sentry, a hardware watchdog on BlueField-4 chips that can quarantine an agent within milliseconds. <span class="impact">&mdash; Impact: monitoring runs on a separate chip the agent cannot tamper with.</span></li>
+        <li>It follows reports of agents escaping test environments; 120+ groups have joined the Linux Foundation&rsquo;s Open Secure AI Alliance, including Cisco, Microsoft, Oracle and Dell. <span class="impact">&mdash; Impact: agent safety becomes a hardware sales pitch.</span></li>
+      </ul>
+    </div>
+    <div class="stat-panel">
+      <div class="stat-number">120+</div>
+      <div class="stat-caption">Organisations in the Open Secure AI Alliance backing Nvidia&rsquo;s platform</div>
+    </div>
+  </div>
+
+  <div class="global-block">
+    <div>
+      <div class="global-eyebrow">Military Development</div>
+      <div class="global-title">Iran Talks Deadlock As Ukraine Pushes North Of Lyman</div>
+      <p class="global-deck">Hormuz stays shut while drone-led tactics reshape the Ukrainian front.</p>
+      <ul>
+        <li><span class="ctry">Iran</span>&rsquo;s FM Araghchi says Tehran has little reason to return to talks and that US envoy Waltz &ldquo;has not read&rdquo; its seven-day plan; Iran still wants the US blockade lifted first. <span class="impact">&mdash; Impact: Brent stays above $100.</span></li>
+        <li><span class="ctry">Ukraine</span>&rsquo;s Operation Vivaldi cleared about 29 sq miles north of Lyman, reaching Russian drone and EW positions and forcing Rubikon drone units to relocate. <span class="impact">&mdash; Impact: striking drone crews first is proving decisive.</span></li>
+      </ul>
+    </div>
+    <div class="stat-panel">
+      <div class="stat-number">29 sq mi</div>
+      <div class="stat-caption">Ground cleared by Ukraine&rsquo;s Operation Vivaldi north of Lyman</div>
+    </div>
+  </div>
+
+  <div class="global-block">
+    <div>
+      <div class="global-eyebrow">UAS &amp; Counter-UAS</div>
+      <div class="global-title">Pentagon Starts Yearlong Laser And Microwave Counter-Drone Trials At Five Bases</div>
+      <p class="global-deck">Directed energy has to prove it can work every day, not just in demos.</p>
+      <ul>
+        <li>JIATF 401 is putting lasers and high-power microwaves with troops at Fort Bliss, Fort Huachuca, Grand Forks, Whiteman and Naval Base Kitsap to test upkeep, power, cooling and integration. <span class="impact">&mdash; Impact: decides whether DE becomes standard base defence.</span></li>
+        <li><span class="ctry">Ukraine</span> is speeding up production of interceptors against Russia&rsquo;s jet-powered Shaheds, with 67 companies working on the problem. <span class="impact">&mdash; Impact: faster drones are forcing faster interceptors.</span></li>
+      </ul>
+    </div>
+    <div class="stat-panel">
+      <div class="stat-number">365</div>
+      <div class="stat-caption">Days of operational DE counter-drone assessment at five US bases</div>
+    </div>
+  </div>
+  </div>
+
+  <div class="page-footer">
+    <div class="sources-list">Unmanned Airspace &middot; Northlines &middot; Kashmir Thunder &middot; Holland &amp; Knight &middot; Fortune &middot; National Defense Magazine &middot; Outlook India &middot; SEMI &middot; Axios &middot; Daily Pioneer &middot; LiveLaw &middot; Nippon.com &middot; Linux Foundation &middot; BAE Systems Australia &middot; Kongsberg &middot; Kashmir Media Service &middot; DQIndia &middot; defence.in &middot; ThePrint Defence &middot; Carnegie Endowment &middot; Business Standard &middot; Inc42 &middot; Quwa &middot; Defence Security Asia &middot; Dawn.com Business &middot; LatestLY &middot; ProPakistani &middot; UAS Vision &middot; India Sentinels &middot; DefenceXP &middot; Arab News PK &middot; Al Jazeera &middot; Bloomberg &middot; Radio Pakistan &middot; Global Times &middot; Breaking Defense &middot; NATO.int &middot; Army Recognition &middot; DefenseScoop &middot; Defense One &middot; IMF &middot; World Bank &middot; CNBC &middot; ADB &middot; Reuters &middot; FlightGlobal &middot; Janes &middot; Space.com &middot; UN News &middot; DroneLife &middot; Republic World &middot; Indian Defence News &middot; IBEF &middot; ThePrint &middot; The Nation &middot; GlobeNewswire &middot; idrw.org &middot; ORF &middot; Defense News &middot; Pakistan Today &middot; Daily Sabah &middot; The News (Pakistan) &middot; Business Recorder &middot; Adda247 Current Affairs &middot; Forbes India &middot; APP &middot; India TV News &middot; Deccan Herald &middot; ANI &middot; P@SHA &middot; Department of War &middot; Al-Monitor &middot; Middle East Eye &middot; SiliconANGLE &middot; 9to5Google &middot; TechRepublic &middot; Meduza &middot; Baird Maritime &middot; Outlook Business &middot; The National &middot; Gulf Today &middot; Futurum Group &middot; Naval News &middot; Aviation Week &middot; Organiser &middot; Trading Economics &middot; Goodreturns &middot; GlobalSecurity.org &middot; Outsource Accelerator &middot; ARY News &middot; Xinhua &middot; The Aviationist &middot; New Atlas &middot; India Narrative &middot; The Federal &middot; Geo News &middot; PressTV &middot; TechCrunch &middot; Asia Times &middot; PIB &middot; NewsOnAir &middot; Express Tribune &middot; Newsweek &middot; MilitarySpot &middot; Daily Pakistan &middot; ETV Bharat &middot; Tom's Hardware &middot; USNI News &middot; NVIDIA Newsroom &middot; SK hynix Newsroom &middot; The Defense Post &middot; IISS &middot; The Soufan Center &middot; TechJuice &middot; Pakistan Observer &middot; Digit.in &middot; NPR &middot; Stanford HAI &middot; TWZ &middot; SIPRI &middot; Soldier Systems Daily &middot; PRS India &middot; SAMAA &middot; Open Magazine &middot; Amnesty International &middot; PSU Watch &middot; The Tribune &middot; NPCI &middot; UNDP &middot; Stars and Stripes &middot; Aviation International News &middot; Defence-Industry.eu &middot; AI Weekly &middot; ThursdAI &middot; Zee News &middot; Rocket Lab &middot; TechTimes &middot; Kashmir Observer &middot; Help Net Security &middot; European Commission &middot; Interesting Engineering &middot; Tech.eu &middot; The Middle East Observer &middot; TechJournal &middot; AIToolsRecap &middot; MilitaryWatch Magazine &middot; Focus Taiwan &middot; Mettis Global &middot; mean.ceo &middot; Swarajya &middot; PGurus &middot; DD India &middot; DD News &middot; @OsintUpdates (X) &middot; @OSINTJK (X) &middot; JURIST &middot; YourStory &middot; Deloitte Insights &middot; Goldman Sachs Research &middot; International Business Times &middot; Daily Independent Pakistan &middot; FinTech Futures &middot; Atlantic Council &middot; Tech Startups &middot; Solutions Review &middot; SUSE &middot; MarketsandMarkets &middot; IANS &middot; Greater Kashmir &middot; Daily Excelsior &middot; Business Today &middot; Business Upturn &middot; MarketScreener &middot; CoinDesk &middot; BankInfoSecurity &middot; Forbes &middot; Motorola Solutions &middot; Jerusalem Post &middot; Council on Foreign Relations &middot; Overt Defense &middot; The Agent Report &middot; US News &middot; DSCA &middot; The Diplomat &middot; Virginia Tech News &middot; MTS Live &middot; Channel iam &middot; Ministry of Finance &middot; Crunchbase News &middot; The Register &middot; Free Malaysia Today &middot; Task &amp; Purpose &middot; Kashmir Despatch &middot; PM India &middot; The Week &middot; sUAS News &middot; MILMAG &middot; Defensehere &middot; EU-Startups &middot; 9to5Mac &middot; Free Press Journal &middot; India Weekly &middot; AMCHAM India &middot; TechBriefly &middot; Ronin's Grips &middot; The Times of Israel &middot; OpIndia &middot; AajTak &middot; India Today &middot; Foreign Policy &middot; Calcalist &middot; GovConWire &middot; Dataconomy &middot; PhoneWorld &middot; Seedtable &middot; GIDS &middot; AWS Press Center &middot; DigiTimes &middot; Pakistan Times &middot; The Information &middot; Greek City Times &middot; Safran &middot; Rosoboronexport &middot; Caixin Global &middot; TrendForce &middot; The Next Web &middot; Military Times &middot; Defense Daily &middot; EUobserver &middot; Eunews &middot; Eastern Herald &middot; DT Next &middot; Deccan Chronicle &middot; OrissaPost &middot; Kotak Neo &middot; SolarQuarter &middot; Defence Standard &middot; Defence Aviation Post &middot; SSBCrack &middot; BusinessToday &middot; The Media Line &middot; HDFC Sky &middot; TechNode &middot; MarkTechPost &middot; Pandaily &middot; Startup Fortune &middot; DroneXL &middot; UNITED24 Media &middot; LIGA.net &middot; Militarnyi &middot; CNN &middot; Euronews &middot; The Hans India &middot; Communications Today &middot; Daily Times &middot; Asianet Newsable &middot; NewsBytes &middot; Aaj English TV &middot; AIR Security &middot; Swedish Armed Forces &middot; Yahoo News &middot; SCMP &middot; US Army &middot; Just Security &middot; News4Jax &middot; Japan Times &middot; Bloom Pakistan &middot; Shafaqna Pakistan &middot; 24NewsHD &middot; fonearena &middot; Seoul Economic Daily &middot; Ukrainska Pravda &middot; Kyiv Independent &middot; Kyiv Post &middot; TVP World &middot; Investing.com &middot; AffairsCloud &middot; Indian Masterminds &middot; Aryan Age &middot; Sarkaritel &middot; Daily Ausaf &middot; SUCH TV &middot; Punjab Kesari &middot; IBTimes India &middot; Onmanorama &middot; NewsGram &middot; International News &amp; Views &middot; News24 &middot; Raksha Samachar &middot; Profit (Pakistan Today) &middot; Censor.NET &middot; The New Arab &middot; The Statesman &middot; The Hill &middot; Taipei Times &middot; CGTN &middot; Windows Report &middot; Euromaidan Press &middot; Medianews4u &middot; Adgully &middot; Telangana Today &middot; Soch Fact Check &middot; Lahore Times &middot; WION &middot; Neowin &middot; Quartz &middot; Sunday Guardian &middot; Storyboard18 &middot; Khaleej Times &middot; France 24 &middot; Gulf News &middot; CBC &middot; NBC News &middot; Washington Post &middot; Transluce &middot; IndraStra &middot; Stockpil &middot; Raksha Anirveda &middot; Critical Threats &middot; RFE/RL &middot; CBS News &middot; SecurityWeek &middot; Pakera &middot; Dunya News &middot; Nukta &middot; Hindustan Gazette</div>
+    <div class="footer-note">Compiled from open sources for briefing purposes, Sept 29, 2026 &middot; Next edition: tomorrow 0800 IST</div>
+  </div>
+</div>
+
+<script>
+(function () {
+  function fit(el, targetPx) {
+    if (!el || !isFinite(targetPx) || targetPx <= 0) return;
+    el.style.zoom = 1;
+    var natural = el.scrollHeight;
+    if (natural <= 0) return;
+    var MIN = 0.85, MAX = 1.35;
+    var z = Math.max(MIN, Math.min(MAX, targetPx / natural));
+    el.style.zoom = z;
+    // el.scrollHeight while a non-1 zoom is applied reflects the element's
+    // local (pre-zoom) content height, not its actual on-page footprint —
+    // the real footprint is scrollHeight * zoom, so that's what must be
+    // compared against the pixel budget each iteration.
+    for (var i = 0; i < 8; i++) {
+      var footprint = el.scrollHeight * z;
+      if (footprint > targetPx) z *= 0.97;
+      else if (footprint < targetPx * 0.97) z *= 1.02;
+      else break;
+      z = Math.max(MIN, Math.min(MAX, z));
+      el.style.zoom = z;
+    }
+  }
+
+  window.addEventListener('load', function () {
+    try {
+      var pageBudget = 10.59 * 96; // A4 11.69in - 2*0.55in PDF margin, at 96 CSS px/in
+      var pages = document.querySelectorAll('.page');
+      var page1 = pages[0], page2 = pages[1];
+
+      var af1 = document.getElementById('af-p1');
+      if (page1 && af1) {
+        var top1 = page1.querySelector('.masthead-row');
+        if (top1) {
+          var spaceAbove1 = af1.getBoundingClientRect().top - top1.getBoundingClientRect().top;
+          fit(af1, pageBudget - spaceAbove1 - 14);
+        }
+      }
+
+      var af2 = document.getElementById('af-p2');
+      if (page2 && af2) {
+        var top2 = page2.querySelector('.section-label-row');
+        var bottom2 = page2.querySelector('.page-footer');
+        if (top2 && bottom2) {
+          var spaceAbove2 = af2.getBoundingClientRect().top - top2.getBoundingClientRect().top;
+          var spaceBelow2 = bottom2.getBoundingClientRect().bottom - af2.getBoundingClientRect().bottom;
+          fit(af2, pageBudget - spaceAbove2 - spaceBelow2 - 14);
+        }
+      }
+
+      // fit()'s screen-mode measurement is conservative vs. Chrome's real
+      // print reflow (a known gap for this template), so it clamps to a
+      // smaller-than-necessary MIN zoom. Today's content was verified safe
+      // at these exact values against the actual rendered PDF page count.
+      // 2026-09-19: af1 0.72 left page 1 ~15% underfilled; 0.78 tipped to 3
+      // pages, 0.75 gives a well-filled 2-page render (verified visually).
+      // 2026-09-21: af1 0.75 left page 1 ~30% underfilled with today's shorter
+      // content; 0.80 gives a well-filled (~92%) 2-page render, verified visually.
+      // 2026-09-26: 0.80 left page 1 ~20% blank; 0.86 gives a ~92% filled
+      // 2-page render, verified visually.
+      // 2026-09-29: af2 0.60 -> 0.64 for larger Global-page text; still a
+      // clean 2-page render (~92% filled), verified visually.
+      if (af1) af1.style.zoom = 0.86;
+      if (af2) af2.style.zoom = 0.64;
+    } catch (e) { /* fail safe: leave default sizing */ }
+  });
+})();
+</script>
+</body>
+</html>
