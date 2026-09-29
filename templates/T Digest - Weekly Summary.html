@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>T Digest — Weekly Summary, July 20–26, 2026</title>
+<style>
+  :root {
+    --bg: #e8e4db;
+    --paper: #ffffff;
+    --ink: #161412;
+    --ink-2: #1a1a1a;
+    --ink-soft: #3a3630;
+    --muted: #6b6558;
+    --muted-2: #8a8471;
+    --rule-heavy: #1a1a1a;
+    --rule-light: #c9c3b6;
+    --accent-bg: #f3efe4;
+    --serif: Georgia, 'Times New Roman', serif;
+    --sans: system-ui, -apple-system, 'Segoe UI', Arial, sans-serif;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    background: var(--bg);
+  }
+
+  body {
+    padding: 24px 16px 40px;
+    font-family: var(--serif);
+    color: var(--ink);
+  }
+
+  .sheet {
+    max-width: 8.27in;
+    margin: 0 auto;
+    background: var(--paper);
+    padding: 0.5in;
+  }
+
+  /* Masthead */
+  .masthead {
+    border-bottom: 4px double var(--ink-2);
+    padding-bottom: 10px;
+    margin-bottom: 12px;
+  }
+
+  .masthead-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-family: var(--sans);
+    font-size: 9.5px;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-bottom: 6px;
+    flex-wrap: wrap;
+    gap: 3px 12px;
+  }
+
+  .wordmark {
+    margin: 0;
+    text-align: center;
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: 38px;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    line-height: 1.05;
+  }
+
+  .wordmark .sub-line {
+    display: block;
+    font-size: 15px;
+    letter-spacing: 0.12em;
+    font-weight: 700;
+    margin-top: 2px;
+  }
+
+  .masthead-sub {
+    text-align: center;
+    font-family: var(--serif);
+    font-size: 10px;
+    color: #5a5548;
+    margin-top: 4px;
+    font-style: italic;
+  }
+
+  /* Lede */
+  .headline {
+    font-size: 21px;
+    margin: 10px 0 3px;
+    font-weight: 700;
+    break-after: avoid;
+    text-wrap: balance;
+    line-height: 1.2;
+    text-decoration: underline;
+    text-decoration-color: var(--rule-light);
+    text-underline-offset: 4px;
+  }
+
+  .byline {
+    font-family: var(--sans);
+    font-size: 9.5px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--muted-2);
+    margin: 0 0 12px;
+  }
+
+  /* Region grid */
+  .region-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 22px;
+    margin-bottom: 6px;
+  }
+
+  .column-header {
+    font-family: var(--sans);
+    font-size: 10.5px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--ink);
+    border-bottom: 2px solid var(--ink-2);
+    padding-bottom: 3px;
+    margin: 0 0 6px;
+  }
+
+  .brief {
+    break-inside: avoid;
+    margin-bottom: 7px;
+  }
+
+  .brief-eyebrow {
+    font-family: var(--sans);
+    font-size: 8.5px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted-2);
+    margin-bottom: 2px;
+  }
+
+  .brief-body {
+    font-size: 10.3px;
+    line-height: 1.36;
+    margin: 0 0 2px;
+  }
+
+  .brief-source {
+    font-family: var(--sans);
+    font-size: 8px;
+    color: var(--muted-2);
+  }
+
+  /* Global row */
+  .section-strip {
+    border-top: 1.5px solid var(--ink-2);
+    padding-top: 8px;
+    margin-top: 6px;
+  }
+
+  .section-strip-title {
+    font-family: var(--sans);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin: 0 0 6px;
+  }
+
+  .global-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0 16px;
+  }
+
+  .global-block {
+    break-inside: avoid;
+  }
+
+  .global-block-title {
+    font-weight: 700;
+    font-size: 10.8px;
+    line-height: 1.25;
+    margin: 0 0 3px;
+    font-family: var(--sans);
+    letter-spacing: 0.02em;
+  }
+
+  .global-block-body {
+    font-size: 9.7px;
+    line-height: 1.34;
+    margin: 0 0 3px;
+  }
+
+  .global-block-source {
+    font-family: var(--sans);
+    font-size: 7.8px;
+    color: var(--muted-2);
+  }
+
+  /* Stat strip */
+  .stat-strip {
+    margin-top: 10px;
+    padding: 8px 10px;
+    background: var(--accent-bg);
+    border: 1px solid var(--rule-light);
+    border-radius: 3px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0 8px;
+  }
+
+  .stat-strip-title {
+    grid-column: 1 / -1;
+    font-family: var(--sans);
+    font-size: 8.5px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--ink-soft);
+    margin-bottom: 5px;
+  }
+
+  .stat {
+    text-align: center;
+  }
+
+  .stat-num {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.1;
+  }
+
+  .stat-label {
+    font-family: var(--sans);
+    font-size: 7.3px;
+    line-height: 1.25;
+    color: var(--muted);
+    margin-top: 2px;
+  }
+
+  .masthead-footer {
+    margin-top: 12px;
+    padding-top: 8px;
+    border-top: 1.5px solid var(--ink-2);
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--sans);
+    font-size: 8px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--muted-2);
+    flex-wrap: wrap;
+    gap: 3px 12px;
+  }
+
+  @media print {
+    html, body { background: var(--paper); padding: 0; }
+    .sheet { max-width: none; padding: 0; }
+    @page { size: A4 portrait; margin: 0.5in; }
+  }
+
+  @media (max-width: 640px) {
+    .wordmark { font-size: 30px; }
+    .region-grid, .global-row { grid-template-columns: 1fr; }
+    .stat-strip { grid-template-columns: repeat(2, 1fr); }
+    .sheet { padding: 0.3in 16px; }
+  }
+</style>
+</head>
+<body>
+<main class="sheet">
+
+  <header class="masthead">
+    <div class="masthead-meta">
+      <span>Week of July 20&ndash;26, 2026</span>
+      <span>Vol. 1&nbsp;&middot;&nbsp;No. 2</span>
+      <span>Regional &amp; Global Affairs &mdash; Week in Review</span>
+    </div>
+    <h1 class="wordmark">T DIGEST<span class="sub-line">WEEKLY SUMMARY</span></h1>
+    <div class="masthead-sub">Six daily editions, synthesised &mdash; compiled from open-source reporting</div>
+  </header>
+
+  <h2 class="headline">AI's $2 Trillion Week: Apple Dethrones Nvidia as India's Defence Spend Tops $71B and NATO's Drone Pledge Anchors the West</h2>
+  <p class="byline">Editors' Desk &mdash; synthesised from six daily T Digest editions, July 20&ndash;25, 2026 (Sunday's edition unavailable)</p>
+
+  <div class="region-grid">
+    <div>
+      <h3 class="column-header">India</h3>
+
+      <article class="brief">
+        <div class="brief-eyebrow">Political</div>
+        <p class="brief-body">NEET-leak fallout escalated all week &mdash; from Monsoon Session's opening tension through Delhi's tear-gas clashes and the brief detention of Rahul Gandhi, Priyanka Gandhi and Akhilesh Yadav &mdash; ending in a Maharashtra Bandh and Modi's fast-track-courts pledge, which protesters rejected as insufficient.</p>
+        <div class="brief-source">Sources: Deccan Herald, LatestLY, Al Jazeera, India TV News</div>
+      </article>
+
+      <article class="brief">
+        <div class="brief-eyebrow">Military</div>
+        <p class="brief-body">Modernisation hit a record pace: HAL's &#8377;13,500cr Su-30MKI buy and INS Malvan's commissioning opened the week, DRDO charted "Stealth Beyond 2030" and Bharat Forge unveiled new FICVs, before a record $25B air-defence clearance pushed India's FY26 DAC approvals past $71B.</p>
+        <div class="brief-source">Sources: Indian Defence News, Adda247, ANI, Defense News</div>
+      </article>
+
+      <article class="brief">
+        <div class="brief-eyebrow">Economy</div>
+        <p class="brief-body">Equities slid all week as Brent crude climbed from $92 to above $100 on Mideast tensions, dragging the Sensex from 77,470 toward 76,391 and the rupee to 96.6/dollar, even as May exports hit a six-month high of $45.2B and RBI flagged inflation risk early on.</p>
+        <div class="brief-source">Sources: Business Standard, India TV News, Trading Economics, Goodreturns</div>
+      </article>
+
+      <article class="brief">
+        <div class="brief-eyebrow">Technology</div>
+        <p class="brief-body">Semicon 2.0 anchored coverage &mdash; Cabinet cleared the &#8377;1.27 lakh crore push and the Vivo-Dixon smartphone venture advanced &mdash; while Tata Electronics pragmatically scaled its Dholera fab back to a mature 90nm node rather than the originally planned 28nm.</p>
+        <div class="brief-source">Sources: Inc42, TechCrunch, DIGITIMES, Business Standard</div>
+      </article>
+    </div>
+
+    <div>
+      <h3 class="column-header">Pakistan</h3>
+
+      <article class="brief">
+        <div class="brief-eyebrow">Political</div>
+        <p class="brief-body">The AJK election dominated the week, building from PTI-boycott friction and deadly JAC unrest through Bilawal's Muzaffarabad rally and reconciliation-commission proposal to a mass PPP show-of-force at Lahore's Minar-e-Pakistan, days ahead of the July 27 vote.</p>
+        <div class="brief-source">Sources: The Nation, Geo News, Al Jazeera, Islamabad Post</div>
+      </article>
+
+      <article class="brief">
+        <div class="brief-eyebrow">Military</div>
+        <p class="brief-body">Counter-militancy operations widened on two fronts: the Bannu campaign held near 24 killed while Balochistan's Operation Shaban surged past 129 dead since July 5, even as Munir's Ankara visit deepened Turkish defence ties and Karachi Shipyard advanced its Jinnah-class frigate.</p>
+        <div class="brief-source">Sources: Defence.pk/ISPR, Pakistan Today, Organiser, Quwa</div>
+      </article>
+
+      <article class="brief">
+        <div class="brief-eyebrow">Economy</div>
+        <p class="brief-body">The KSE-100 peaked near a record before Middle East-driven selling pulled it from 174,551 to 171,021 by week's end, even as S&amp;P upgraded Pakistan's sovereign rating to 'B' and the IMF trimmed its FY27 growth forecast to 3.5%.</p>
+        <div class="brief-source">Sources: Business Recorder, The Nation, 24NewsHD, S&amp;P Global</div>
+      </article>
+
+      <article class="brief">
+        <div class="brief-eyebrow">Technology</div>
+        <p class="brief-body">A record $4.6B FY26 tech-export figure (+21% YoY) anchored the week's coverage, capped by Shehbaz Sharif and Munir inaugurating "Karakoram One" &mdash; Pakistan's largest AI data centre &mdash; in Islamabad on July 24.</p>
+        <div class="brief-source">Sources: ProPakistani, Radio Pakistan, Dawn.com, Express Tribune</div>
+      </article>
+    </div>
+  </div>
+
+  <section class="section-strip">
+    <h2 class="section-strip-title">Global &mdash; AI, Military Development &amp; UAS / Ctr-UAS</h2>
+    <div class="global-row">
+      <div class="global-block">
+        <div class="global-block-title">Global AI</div>
+        <p class="global-block-body">A week of capital escalation: Apple overtook Nvidia as the world's most valuable company amid a $2 trillion AI-chip rally, Microsoft lifted 2026 capex to $190B and Seoul pledged $880B, while China's 29-nation WAICO bloc launched as UN dialogues kept warning of "catastrophic harm."</p>
+        <div class="global-block-source">Sources: CNBC/Bloomberg, Tech Startups, UN News, AI Weekly</div>
+      </div>
+      <div class="global-block">
+        <div class="global-block-title">Global Military Development</div>
+        <p class="global-block-body">Sixth-gen and naval rearmament advanced together &mdash; GCAP's &pound;4.6B Edgewing contract, Poland's first Cameri-built F-35A, and Germany's &euro;6.3B frigate buy &mdash; while Ukraine's F-16 fleet scored its first confirmed air-to-air kill, later verified to the Senate by the Joint Chiefs chairman.</p>
+        <div class="global-block-source">Sources: FlightGlobal, The Aviationist, Naval News, Defense News</div>
+      </div>
+      <div class="global-block">
+        <div class="global-block-title">Global UAS / Ctr-UAS</div>
+        <p class="global-block-body">NATO's $40B counter-drone pledge through 2031 anchored coverage all week alongside AeroVironment's recurring $500M Army contract, as the Pentagon opened a dedicated Unmanned Systems Office and finalised SAFER SKIES rules to fast-track counter-drone technology.</p>
+        <div class="global-block-source">Sources: NATO.int, Army Recognition, The Drone Girl, DroneLife</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="stat-strip">
+    <div class="stat-strip-title">The Week by the Numbers</div>
+    <div class="stat">
+      <div class="stat-num">$190B</div>
+      <div class="stat-label">Microsoft's 2026 AI capex plan</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">$71B</div>
+      <div class="stat-label">India's record FY26 defence approvals</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">$40B</div>
+      <div class="stat-label">NATO's 5-yr counter-drone pledge</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">129+</div>
+      <div class="stat-label">Killed, Pakistan's Op Shaban since Jul 5</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">$4.6B</div>
+      <div class="stat-label">Pakistan's record FY26 tech exports</div>
+    </div>
+  </div>
+
+  <footer class="masthead-footer">
+    <span>The Common Ledger &mdash; Weekly Summary compiled from six daily T Digest editions (Jul 20&ndash;25, 2026; Jul 26 unavailable)</span>
+    <span>Sources cited under each item &middot; Next edition: Sunday</span>
+  </footer>
+
+</main>
+</body>
+</html>
